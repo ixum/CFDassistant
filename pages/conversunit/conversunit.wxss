@@ -49,13 +49,13 @@ page{
     background:rgba(244,0,0,0.8);  
     border-radius: 8rpx;
 }
-.numBox{
+.pickerContent{
   display: flex;
   height:40rpx;
 }
 
 .fb-type{
-  height: 104rpx;
+  height: 50rpx;
   width: 100%;
   background: #fff;
   margin-bottom: 20rpx;
@@ -85,12 +85,26 @@ page{
   width: 28rpx;
   height: 28rpx;
 }
+.numBox{
+  margin-left:20rpx;
+}
 .finalresult{
   height:940rpx;
   overflow-y: scroll;
+  margin-top:50rpx;
 }
 .resIn{
 display: flex;  
 justify-content: space-between;
-margin:10rpx 20rpx;
+margin:40rpx 20rpx;
+border-bottom:1rpx solid gray;
+}
+::-webkit-scrollbar {
+  width: 20rpx;
+  height: 0;
+  color: red;
+}
+.sup{
+     font-size: 10px;
+     vertical-align:text-top;
 }
