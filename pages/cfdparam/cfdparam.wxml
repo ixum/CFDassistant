@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="table">
+      <navigator url="../cfdparam/yplus/yplus">Yplus计算</navigator>
+      <navigator url="../cfdparam/turbparams/turbparams">湍流参数</navigator>
+      <navigator url="../cfdparam/timestep/timestep">时间步长</navigator>
+      <navigator url="../cfdparam/nondimension/nondimension">无量纲参数 </navigator>
+      <navigator url="../cfdparam/airthermo/airthermo">空气热力学参数 </navigator>
+    </view>
+    <view class="bottom">CFD小透明</view>
+</view>

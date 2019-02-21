@@ -1,0 +1,49 @@
+
+<view class="container">
+    <view class="table">
+        <view class="tr">
+          <view class="innerCon">
+              <text>温度：</text>
+              <input focus placeholder="请输入温度值" bindinput='temperature' value="{{temperature}}" />
+          </view>
+          <text>K</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>定压比热容：</text>
+              <input focus placeholder="1.225" bindinput='cp' value="{{cp}}" />
+          </view>
+          <text>J/(kg.K)</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>定容比热容：</text>
+              <input focus placeholder="0.00001" bindinput='cv' value="{{cv}}" />
+          </view>
+          <text>J/(kg.K)</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>比热比：</text>
+              <input focus placeholder="1.0" bindinput='gamma' value="{{gamma}}" />
+          </view>
+        </view>
+      <view class="btnCon">
+        <button class="btn"   bindtap='calculate'>计算</button>
+        <button class="btn"  bindtap='clearall'>清除</button>
+      </view>
+      <swiper
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}"
+        interval="{{interval}}"
+        duration="{{duration}}" 
+        class="swiperImg">
+        <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="310" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> 
+     <view class="bottom">CFD小透明</view>    
+</view>

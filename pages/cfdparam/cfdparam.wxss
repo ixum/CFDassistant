@@ -1,0 +1,39 @@
+/**index.wxss**/
+page{
+	width: 100%;
+	height: 98%;
+  background:#70c7da;
+}
+.container{
+   height:100%;
+   padding:0 20rpx;
+   width:100%;
+}
+navigator{
+  height:100rpx;
+  line-height:100rpx;
+  border: 2rpx solid rgba(0,0,255,0.5);
+  border-radius: 40rpx;
+  text-align: center;
+  color:rgb(0, 0, 0);
+  font-weight: 500;
+  width: 45%;
+  flex-shrink: 0;
+  /* margin-left: 30rpx;
+  margin-right: 30rpx; */
+  margin-top:40rpx;
+}
+.table{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.bottom{
+  border-top: 1rpx dotted gray;
+  width: 100%;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 20rpx;
+}
+

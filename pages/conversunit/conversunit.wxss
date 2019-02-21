@@ -1,0 +1,96 @@
+
+page{
+  height:100%;
+  box-sizing: border-box;
+}
+.contentSwiper{
+  min-height:940rpx;
+}
+.swiper-box{
+  height:200rpx;
+  /* background: #b6b6b6; */
+  padding:20rpx 0;
+}
+.swpierItem{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cat{
+  width:20%;
+  border:2rpx solid rgba(0,0,0,0.5);
+  border-radius: 40rpx;
+  margin-top:10rpx;
+  margin-right:20rpx;
+  text-align: center;
+  height:60rpx;
+  line-height:60rpx; 
+  font-size: 32rpx;
+}
+.active{
+  background: green;
+}
+
+.swiper-box .wx-swiper-dot{
+  margin-top:200rpx;
+    width:60rpx;
+    display: inline-flex;
+    height: 10rpx;
+    margin-left: 20rpx;
+    justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(0,0,0,0.5);
+    border-radius: 8rpx;
+}
+.swiper-box .wx-swiper-dot-active::before{
+    background:rgba(244,0,0,0.8);  
+    border-radius: 8rpx;
+}
+.numBox{
+  display: flex;
+  height:40rpx;
+}
+
+.fb-type{
+  height: 104rpx;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.fb-type .type-label{
+  height: 40rpx;
+  flex: 1;
+  color: #333;
+  font-size: 32rpx;
+  margin-left:150rpx;
+  padding-top:10rpx;
+}
+.fb-type .type-icon{
+  margin-top:10rpx;
+  height: 36rpx;
+  width: 36rpx;
+}
+.clear-icon{
+  position: absolute;
+  top: 43rpx;
+  right: 0rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.finalresult{
+  height:940rpx;
+  overflow-y: scroll;
+}
+.resIn{
+display: flex;  
+justify-content: space-between;
+margin:10rpx 20rpx;
+}

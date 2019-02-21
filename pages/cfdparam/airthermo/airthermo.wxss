@@ -1,0 +1,50 @@
+/* pages/cfdparam/cfdparam.wxss */
+page{
+  height:98%;
+}
+.container{
+   height:100%;
+   padding:0 20rpx;
+   width:100%;
+}
+.table{
+  width:100%;
+  height:100%;
+}
+.tr{
+  margin:20rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1rpx solid gray;
+  padding-bottom: 28rpx;
+}
+input{
+  display: inline-block;
+  overflow:visible;
+  width:318rpx;
+}
+.btnCon{
+    display: flex;
+    flex-direction: row; 
+    margin-top:15rpx;
+}
+.btn{
+  width:160rpx;
+  background: green;
+  line-height:86rpx;
+  margin-left:80rpx;
+  margin-bottom:55rpx;
+
+}
+.bottom{
+  border-top: 1rpx dotted gray;
+  width: 100%;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.swiperImg{
+  width:100%;
+  height:46%;
+
+}

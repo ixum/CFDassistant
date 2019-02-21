@@ -1,0 +1,132 @@
+<view class="container">
+    <view class="table">
+      <swiper indicator-dots="{{indicatorDots}}" class="swiper-box"  autoplay="{{autoplay}}" circular="{{circular}}">
+        <block wx:for="{{category}}" wx:key="{{category}}">
+          <swiper-item class="swpierItem" >
+            <view  class="cat {{clickItem==item.id?'active':''}}" data-current="{{item.id}}"  wx:for="{{item}}" wx:key="{{item}}" bindtap="clickTab">{{item.name}}
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <swiper current="{{clickItem}}" duration="300"  bindchange="swiperTab" class="contentSwiper">
+        <swiper-item >
+          <view>
+            <view class="numBox">
+              <input bindinput="bindKeyInput" placeholder="请输入数字" />
+            </view>
+          </view>
+        </swiper-item>
+
+        <swiper-item>
+        <view>
+          Page1
+        </view>
+        </swiper-item>
+
+        <swiper-item>
+          <view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+              <view class="picker">
+                <view class="fb-type">
+                  <view class="numBox">
+                    <input bindinput="bindKeyInput" placeholder="请输入数字" />
+                    <view class="type-label">{{array[index]}}</view>
+                    <image class="type-icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/pickerArrow-a8b918f05f.png"></image>
+                  </view>
+                </view>
+              </view>
+            </picker>
+            <view  class="finalresult">
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+        <view class="resIn">
+          <input placeholder='wwwww'></input><text>m/s</text>
+        </view>
+      </view>
+
+
+    </view></swiper-item>
+    <swiper-item ><view>3</view></swiper-item>
+    <swiper-item><view>4</view></swiper-item>
+    <swiper-item><view>5</view></swiper-item>
+    <swiper-item ><view>6</view></swiper-item>
+    <swiper-item><view>7</view></swiper-item>
+    <swiper-item><view>8</view></swiper-item>
+    <swiper-item ><view>9</view></swiper-item>
+    <swiper-item><view>10</view></swiper-item>
+    <swiper-item><view>11</view></swiper-item>
+    <swiper-item ><view>12</view></swiper-item>
+    <swiper-item><view>13</view></swiper-item>
+    <swiper-item><view>14</view></swiper-item>
+    <swiper-item ><view>15</view></swiper-item>
+</swiper>
+
+</view>
+</view>

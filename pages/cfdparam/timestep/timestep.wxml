@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="table">
+    <view class="tr">
+      <view class="innerCon">
+        <text>来流速度：</text>
+        <input focus placeholder="输入速度值" bindinput='velocity' value="{{velocity}}" />
+      </view>
+      <text>m/s</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>Courant数：</text>
+        <input focus placeholder="输入Courant数" bindinput='courtant' value="{{courtant}}" />
+      </view>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>网格尺寸：</text>
+        <input focus placeholder="输入最小网格尺寸" bindinput='dx' value="{{dx}}" />
+      </view>
+      <text>mm</text>
+    </view>
+        
+    <view class="btnCon">
+      <button class="btn"   bindtap='calculate'>计算</button>
+      <button class="btn"  bindtap='clearall'>清除</button>
+    </view>
+
+    <view class="tr">
+      <view class="innerCon">
+          <text class="result">计算结果</text> 
+      </view>
+    </view>
+    <view class="tr">
+      <view >
+        <text>时间步长：</text>
+      </view>
+      <text decode="{{true}}" class="timestep">{{dt}}&nbsp;&nbsp;</text>
+      <text>s</text>
+    </view> 
+  </view>
+  <view class="bottom">CFD小透明</view>
+</view>

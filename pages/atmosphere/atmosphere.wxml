@@ -1,0 +1,57 @@
+<view class="container">
+  <view class="table">
+    <view class="tr">
+      <view class="innerCon">
+        <text>高度：</text>
+        <input focus placeholder="请输入高度" bindinput='height' value="{{height}}" />
+      </view>
+      <text>km</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>压力：</text>
+        <input focus placeholder="" bindinput='pressure' value="{{pressure}}" />
+      </view>
+      <text>Pa</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>温度：</text>
+        <input focus placeholder="" bindinput='temperature' value="{{temperature}}" />
+      </view>
+      <text>K</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>密度：</text>
+        <input focus placeholder="" bindinput='density' value="{{density}}" />
+      </view>
+      <text>kg/m^3</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>定压比热容：</text>
+        <input focus placeholder="" bindinput='cp' value="{{cp}}" />
+      </view>
+      <text>J/(kg.K)</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>定容比热容：</text>
+        <input focus placeholder="" bindinput='cv' value="{{cv}}" />
+      </view>
+      <text>J/(kg.K)</text>
+    </view>
+    <view class="tr">
+      <view class="innerCon">
+        <text>比热比：</text>
+        <input focus placeholder="" bindinput='gamma' value="{{gamma}}" />
+      </view>
+    </view>
+    <view class="btnCon">
+      <button class="btn"   bindtap='dealDataBtn'>计算</button>
+      <button class="btn"  bindtap='clearall'>清除</button>
+    </view>
+  </view>
+  <view class="bottom">CFD小透明</view>
+</view>

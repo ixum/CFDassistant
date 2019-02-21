@@ -1,0 +1,66 @@
+/* pages/cfdparam/nondimension/nondimension.wxss */
+/* pages/cfdparam/cfdparam.wxss */
+page{
+  height:98%;
+}
+.container{
+   height:100%;
+   padding:0 20rpx;
+   width:100%;
+}
+
+.table{
+  padding-top:40rpx;
+  width:100%;
+  overflow-y: scroll;
+  height: 96%;
+}
+.downIcon{
+  width:60rpx;
+  height:60rpx;
+}
+.tr{
+  margin:20rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1rpx solid gray;
+  padding-bottom: 16rpx;
+}
+
+input{
+  display: inline-block;
+  overflow:visible;
+  width:200rpx;
+}
+.btnCon{
+    display: flex;
+    flex-direction: row; 
+    margin-top:15rpx;
+}
+.btn{
+  width:260rpx;
+  background: rgba(0, 128, 0, 0.8);
+  line-height:80rpx;
+  margin-left:40rpx;
+}
+.controllerMenu{
+  position: fixed;
+  top:-10rpx;
+  right:20rpx;
+  z-index:100;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bottom{
+  border-top: 1rpx dotted gray;
+  width: 100%;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 20rpx;
+}

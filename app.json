@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/conversunit/conversunit",
+    "pages/calculator/calculator",
+    "pages/atmosphere/atmosphere",
+    "pages/material/material",
+    "pages/formula/formula",
+    "pages/cfdparam/cfdparam",
+    "pages/cfdparam/yplus/yplus",
+    "pages/cfdparam/turbparams/turbparams",
+    "pages/cfdparam/timestep/timestep",
+    "pages/cfdparam/nondimension/nondimension",
+    "pages/cfdparam/airthermo/airthermo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "CFD助手",
+    "navigationBarTextStyle": "black"
+  }
+}

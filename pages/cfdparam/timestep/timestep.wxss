@@ -1,0 +1,61 @@
+page{
+  height:98%;
+}
+.container{
+   height:100%;
+   padding:0 20rpx;
+   width:100%;
+}
+.title{
+  font-size:50rpx;
+  font-weight:600;
+  text-align: center;
+}
+.dec{
+  padding:20rpx;
+  line-height: 70rpx;
+}
+.table{
+  width:100%;
+}
+.tr{
+  width:100%;
+  margin:20rpx 10rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 1rpx solid gray;
+  padding-bottom: 28rpx;
+}
+.result{
+  width: 100%;
+  margin-left: 273rpx;
+}
+
+input{
+  display: inline-block;
+  overflow:visible;
+  width:320rpx;
+}
+.timestep{
+  width:440rpx;
+}
+
+.btnCon{
+  display: flex;
+  flex-direction: row; 
+  width:100%;
+  margin-top:15rpx;
+}
+.btn{
+  width:300rpx;
+  background: green;
+  line-height:86rpx;
+}
+.bottom{
+  border-top: 1rpx dotted gray;
+  width: 100%;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 20rpx;
+}

@@ -1,0 +1,191 @@
+<view class="container">
+    <view class="table">
+       <view class="tr controllerMenu">
+          <image src="../../../images/down.png" class="downIcon" bindtap='showDetail'></image>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>来流速度：</text>
+              <input focus placeholder="请输入数字" bindinput='velocity' value="{{velocity}}" />
+          </view>
+          <text>m/s</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>介质密度：</text>
+              <input focus placeholder="请输入数字" bindinput='density' value="{{density}}" />
+          </view>
+          <text>km/m^3</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>动力粘度：</text>
+              <input focus placeholder="请输入数字" bindinput='mu' value="{{mu}}" />
+          </view>
+          <text>kg/(m.s)</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>特征长度：</text>
+              <input focus placeholder="请输入数字" bindinput='length' value="{{length}}" />
+          </view>
+          <text>m</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>定压比热容：</text>
+              <input focus placeholder="请输入数字" bindinput='cp' value="{{cp}}" />
+          </view>
+          <text>J/(kg.K)</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>导热系数：</text>
+              <input focus placeholder="请输入数字" bindinput='k' value="{{k}}" />
+          </view>
+          <text>J/(m.K.s)</text>
+        </view>
+        <view wx:if="{{controller==true}}">
+          <view class="tr">
+          <view class="innerCon">
+              <text>特征温度：</text>
+              <input focus placeholder="请输入数字" bindinput='temperature' value="{{temperature}}" />
+          </view>
+          <text>K</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>特征压力：</text>
+              <input focus placeholder="请输入数字" bindinput='pressure' value="{{pressure}}" />
+          </view>
+          <text>Pa</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>温差：</text>
+              <input focus placeholder="请输入数字" bindinput='dk' value="{{dk}}" />
+          </view>
+          <text>K</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>压差：</text>
+              <input focus placeholder="请输入数字" bindinput='dp' value="{{dp}}" />
+          </view>
+          <text>Pa</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>热膨胀系数：</text>
+              <input focus placeholder="请输入数字" bindinput='beta' value="{{beta}}" />
+          </view>
+          <text>/K</text>
+        </view>
+        </view>
+        <view class="btnCon">
+          <button class="btn"   bindtap='dealDataBtn'>计算</button>
+          <button class="btn"  bindtap='clearall'>清除</button>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>雷诺数Re：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>马赫数Ma：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>普朗特数Pr：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+         <view class="tr">
+          <view class="innerCon">
+              <text>弗朗德数Fr：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view wx:if="{{controller==true}}">
+          <view class="tr">
+          <view class="innerCon">
+              <text>格拉晓夫数Gr：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>Peclect数Pe：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>施密特数Sc：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>努塞尔数Nu：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>埃克数Ec：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+       
+        <view class="tr">
+          <view class="innerCon">
+              <text>韦伯数We：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>毕奥数Bi：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>欧拉数Eu：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>克努森数Kn：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>瑞利数Ra：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>阿基米德数Ar：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>阿特伍德数A：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}</text>
+        </view>
+        </view>
+    </view>
+    <view class="bottom">CFD小透明</view>
+</view>
+

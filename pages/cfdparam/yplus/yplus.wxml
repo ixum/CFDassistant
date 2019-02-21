@@ -1,0 +1,61 @@
+<view class="container">
+    <view class="table">
+        <view class="tr">
+          <view class="innerCon">
+              <text>来流速度：</text>
+              <input focus placeholder="1.0" bindinput='velocity' value="{{velocity}}" />
+          </view>
+          <text>m/s</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>介质密度：</text>
+              <input focus placeholder="1.225" bindinput='density' value="{{density}}" />
+          </view>
+          <text>km/m^3</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>动力粘度：</text>
+              <input focus placeholder="0.00001" bindinput='mu' value="{{mu}}" />
+          </view>
+          <text>kg/(m.s)</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>特征长度：</text>
+              <input focus placeholder="1.0" bindinput='length' value="{{length}}" />
+          </view>
+          <text>m</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>目标Y+值：</text>
+              <input focus placeholder="1.0" bindinput='yplus' value="{{yplus}}" />
+          </view>
+          <text>m/s</text>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text class="result">计算结果</text> 
+          </view>
+        </view>
+        <view class="tr">
+          <view class="innerCon">
+              <text>第一层高度：</text>
+          </view>
+          <text decode="{{true}}">{{dx}}&nbsp;&nbsp;m</text>
+        </view>
+       <view class="tr">
+          <view class="innerCon">
+              <text>雷诺数：</text>
+          </view>
+          <text>{{res}}</text>
+        </view>
+        <view class="btnCon">
+          <button class="btn"   bindtap='dealDataBtn'>计算</button>
+          <button class="btn"  bindtap='clearall'>清除</button>
+        </view>
+    </view>
+    <view class="bottom">CFD小透明</view>     
+</view>
