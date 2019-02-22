@@ -1,430 +1,450 @@
-<view class="container">
+ <view class="container">
     <view class="table">
-    
-<view>
-  <swiper indicator-dots="{{indicatorDots}}" class="swiper-box"  autoplay="{{autoplay}}" circular="{{circular}}">
-    <block wx:for="{{category}}" wx:key="{{category}}">
-        <swiper-item class="swpierItem" >
-          <view  class="cat {{clickItem==item.id?'active':''}}" data-current="{{item.id}}"  wx:for="{{item}}" wx:key="{{item}}" bindtap="clickTab">{{item.name}}</view>
+      <swiper indicator-dots="{{indicatorDots}}" class="swiper-box"  autoplay="{{autoplay}}" circular="{{circular}}">
+        <block wx:for="{{category}}" wx:key="{{category}}">
+          <swiper-item class="swpierItem" >
+            <view  class="cat {{clickItem==item.id?'active':''}}" data-current="{{item.id}}"  wx:for="{{item}}" wx:key="{{item}}" bindtap="clickTab">{{item.name}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <swiper current="{{clickItem}}" duration="300"  bindchange="swiperTab" class="contentSwiper">
+          <!-- 长度换算页面 -->
+        <swiper-item >
+          <view class="pickerContent">
+            <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" bindblur='lengthNumChange'/></view>
+            <picker bindchange="lengthChange" value="{{index}}" range="{{lengthZharray}}">
+              <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{lengthZharray[index]}}</view>
+                    <image class="type-icon" src="../../images/grayDown.png"></image>
+                  </view>
+                </view>
+            </picker>
+          </view>
+          <view  class="finalresult">
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mKilometer' value="{{mKilometer}}"/> 
+              <text>公里(kilometre)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mMeter' value="{{mMeter}}"/> 
+              <text>米(metre)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mDecimeter' value="{{mDecimeter}}"/> 
+              <text>分米(decimeter)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCentimeter' value="{{mCentimeter}}"/> 
+              <text>厘米(centimeter)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mMillimeter' value="{{mMillimeter}}"/> 
+              <text>毫米(millimeter)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mMicronmeter' value="{{mMicronmeter}}"/> 
+              <text>微米(micrometer)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mLimeter' value="{{mLimeter}}"/> 
+              <text>里</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mZhangmeter' value="{{mZhangmeter}}"/> 
+              <text>丈</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mChimeter' value="{{mChimeter}}"/> 
+              <text>尺</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCunmeter' value="{{mCunmeter}}"/> 
+              <text>寸</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCunmeter' value="{{mCunmeter}}"/> 
+              <text>分</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mmLimeter' value="{{mmLimeter}}"/> 
+              <text>厘</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='nautMile' value="{{nautMile}}"/> 
+              <text>海里</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='nautFathom' value="{{nautFathom}}"/> 
+              <text>英寻</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='engMile' value="{{engMile}}"/> 
+              <text>英里(mile)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='engFurlong' value="{{engFurlong}}"/> 
+              <text>弗隆(fur)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='engYard' value="{{engYard}}"/> 
+              <text>码</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='engFoot' value="{{engFoot}}"/> 
+              <text>英尺(foot)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='engInch' value="{{engInch}}"/> 
+              <text>英寸(inch)</text>
+            </view> 
+          </view>
         </swiper-item>
-    </block>
-  </swiper>
-<swiper current="{{clickItem}}" duration="300"  bindchange="swiperTab" class="contentSwiper">
-<!-- 长度换算页面 -->
-    <swiper-item >
-      <view class="pickerContent">
-        <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
-         bindblur='lengthNumChange'/></view>
-      <picker bindchange="lengthChange" value="{{index}}" range="{{lengthZharray}}">
-        <view class="picker">
-          <view class="fb-type">
-            <view class="type-label">{{lengthZharray[index]}}</view>
-            <image class="type-icon" src="../../images/grayDown.png"></image>
+         <!-- 面积单位换算页面 -->
+        <swiper-item>
+          <view>
+            <view class="pickerContent">
+              <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
+              bindblur='areaNumChange'/></view>
+              <picker bindchange="areaChange" value="{{index}}" range="{{areaZharray}}">
+                <view class="picker">
+                  <view class="fb-type">
+                    <view class="type-label">{{areaZharray[index]}}</view>
+                    <image class="type-icon" src="../../images/grayDown.png"></image>
+                  </view>
+                </view>
+              </picker>
+            </view>
+            <view  class="finalresult" >
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mSquare_kilometer' value="{{mSquare_kilometer}}"/> 
+                <text>平方公里(km<text class="sup">2</text>)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mHectare' value="{{mHectare}}"/> 
+                <text>公顷(ha)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mAre' value="{{mAre}}"/> 
+                <text>市亩</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mSquare_kilometer' value="{{mSquare_kilometer}}"/> 
+                <text>平方米(m<text class="sup">2</text>)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mSquare_decimeter' value="{{mSquare_decimeter}}"/> 
+                <text>平方分米(dm<text class="sup">2</text>)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mSquare_centimeter' value="{{mSquare_centimeter}}"/> 
+                <text>平方厘米(cm<text class="sup">2</text>)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mSquare_millimeter' value="{{mSquare_millimeter}}"/> 
+                <text>平方毫米(mm<text class="sup">2</text>)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='engSquare_mile' value="{{engSquare_mile}}"/> 
+                <text>平方英里(sq mi)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='engAcre' value="{{engAcre}}"/> 
+                <text>英亩</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='usSquare_rod' value="{{usSquare_rod}}"/> 
+                <text>平方竿(sq rd)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='engSquare_yard' value="{{engSquare_yard}}"/> 
+                <text>平方码(sq yd)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='engSquare_foot' value="{{engSquare_foot}}"/> 
+                <text>平方英尺(sq ft)</text>
+              </view>
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='engSquare_inch' value="{{engSquare_inch}}"/> 
+                <text>平方英寸(sq in)</text>
+              </view>
+            </view>
           </view>
-        </view>
-      </picker>
-      </view>
-      <view  class="finalresult">
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mKilometer' value="{{mKilometer}}"/> 
-          <text>公里(kilometre)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mMeter' value="{{mMeter}}"/> 
-          <text>米(metre)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mDecimeter' value="{{mDecimeter}}"/> 
-          <text>分米(decimeter)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCentimeter' value="{{mCentimeter}}"/> 
-          <text>厘米(centimeter)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mMillimeter' value="{{mMillimeter}}"/> 
-          <text>毫米(millimeter)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mMicronmeter' value="{{mMicronmeter}}"/> 
-          <text>微米(micrometer)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mLimeter' value="{{mLimeter}}"/> 
-          <text>里</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mZhangmeter' value="{{mZhangmeter}}"/> 
-          <text>丈</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mChimeter' value="{{mChimeter}}"/> 
-          <text>尺</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCunmeter' value="{{mCunmeter}}"/> 
-          <text>寸</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCunmeter' value="{{mCunmeter}}"/> 
-          <text>分</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mmLimeter' value="{{mmLimeter}}"/> 
-          <text>厘</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='nautMile' value="{{nautMile}}"/> 
-          <text>海里</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='nautFathom' value="{{nautFathom}}"/> 
-          <text>英寻</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engMile' value="{{engMile}}"/> 
-          <text>英里(mile)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engFurlong' value="{{engFurlong}}"/> 
-          <text>弗隆(fur)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='engYard' value="{{engYard}}"/> 
-          <text>码</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engFoot' value="{{engFoot}}"/> 
-          <text>英尺(foot)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engInch' value="{{engInch}}"/> 
-          <text>英寸(inch)</text>
-        </view>
-       
-      </view>
-    </swiper-item>
-    <!-- 面积单位换算页面 -->
-    <swiper-item><view>
-      <view class="pickerContent">
-        <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
-         bindblur='areaNumChange'/></view>
-      <picker bindchange="areaChange" value="{{index}}" range="{{areaZharray}}">
-        <view class="picker">
-          <view class="fb-type">
-            <view class="type-label">{{areaZharray[index]}}</view>
-            <image class="type-icon" src="../../images/grayDown.png"></image>
+        </swiper-item>
+         <!-- 体积单位转换页面 -->
+        <swiper-item>
+          <view class="pickerContent">
+            <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
+            bindblur='volumeNumChange'/></view>
+            <picker bindchange="volumeChange" value="{{index}}" range="{{VolumeZharray}}">
+              <view class="picker">
+                <view class="fb-type">
+                  <view class="type-label">{{VolumeZharray[index]}}</view>
+                  <image class="type-icon" src="../../images/grayDown.png"></image>
+                </view>
+              </view>
+            </picker>
           </view>
-        </view>
-      </picker>
-      </view>
-      <view  class="finalresult" >
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mSquare_kilometer' value="{{mSquare_kilometer}}"/> 
-          <text>平方公里(km<text class="sup">2</text>)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mHectare' value="{{mHectare}}"/> 
-          <text>公顷(ha)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mAre' value="{{mAre}}"/> 
-          <text>市亩</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mSquare_kilometer' value="{{mSquare_kilometer}}"/> 
-          <text>平方米(m<text class="sup">2</text>)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mSquare_decimeter' value="{{mSquare_decimeter}}"/> 
-          <text>平方分米(dm<text class="sup">2</text>)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mSquare_centimeter' value="{{mSquare_centimeter}}"/> 
-          <text>平方厘米(cm<text class="sup">2</text>)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='mSquare_millimeter' value="{{mSquare_millimeter}}"/> 
-          <text>平方毫米(mm<text class="sup">2</text>)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='engSquare_mile' value="{{engSquare_mile}}"/> 
-          <text>平方英里(sq mi)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engAcre' value="{{engAcre}}"/> 
-          <text>英亩</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='usSquare_rod' value="{{usSquare_rod}}"/> 
-          <text>平方竿(sq rd)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='engSquare_yard' value="{{engSquare_yard}}"/> 
-          <text>平方码(sq yd)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='engSquare_foot' value="{{engSquare_foot}}"/> 
-          <text>平方英尺(sq ft)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='engSquare_inch' value="{{engSquare_inch}}"/> 
-          <text>平方英寸(sq in)</text>
-        </view>
-      </view>
-    </view></swiper-item>
-     <!-- 体积单位转换页面 -->
-    <swiper-item><view class="pickerContent">
-      <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
-        bindblur='volumeNumChange'/></view>
-      <picker bindchange="volumeChange" value="{{index}}" range="{{VolumeZharray}}">
-        <view class="picker">
-          <view class="fb-type">
-            <view class="type-label">{{VolumeZharray[index]}}</view>
-            <image class="type-icon" src="../../images/grayDown.png"></image>
+          <view  class="finalresult">
+            <view>〖公　制〗</view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCubic_meter' value="{{mCubic_meter}}"/> 
+              <text>立方米(m<text class="sup">3</text>)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mHectoliter' value="{{mHectoliter}}"/> 
+              <text>公石(hl)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mDekaliter' value="{{mDekaliter}}"/> 
+              <text>十升(dal)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mLiter' value="{{mLiter}}"/> 
+              <text>立方分米(mm<text class="sup">3</text>)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mDeciliter' value="{{mDeciliter}}"/> 
+              <text>分升(dl)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCentiliter' value="{{mCentiliter}}"/> 
+              <text>厘升(cl)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mMilliliter' value="{{mMilliliter}}"/> 
+              <text>立方厘米(cm<text class="sup">3</text>)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mCubic_millimeter' value="{{mCubic_millimeter}}"/> 
+              <text>立方毫米(mm<text class="sup">3</text>)</text>
+            </view>
+            <view>〖美制干量〗</view>
+              <view class="resIn">
+              <input  placeholder="0"  bindinput='usdBarrel' value="{{usdBarrel}}"/> 
+              <text>桶</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='usdBushel' value="{{usdBushel}}"/> 
+              <text>蒲式耳(bu)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='usdPeck' value="{{usdPeck}}"/> 
+              <text>配克(pk)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='usdQuart' value="{{usdQuart}}"/> 
+              <text>夸脱(qt)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='usdPint' value="{{usdPint}}"/> 
+              <text>品脱(pt)</text>
+            </view>
+            <view>〖英制液量和干量〗</view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='briBarrel' value="{{briBarrel}}"/> 
+              <text>桶</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='briBushel' value="{{briBushel}}"/> 
+              <text>蒲式耳</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='briGallon' value="{{briGallon}}"/> 
+              <text>加仑(bal)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='briPint' value="{{briPint}}"/> 
+              <text>品脱(pt)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='briFluid_ounce' value="{{briFluid_ounce}}"/> 
+              <text>液量盎司(fl oz)</text>
+            </view>
+            <view>〖公制烹调制式〗</view>
+              <view class="resIn">
+              <input  placeholder="0"  bindinput='mcTable_spoon' value="{{mcTable_spoon}}"/> 
+              <text>汤勺</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mcTea_spoon' value="{{mcTea_spoon}}"/> 
+              <text>调羹(Tea spoon)</text>
+            </view>
+            <view>〖美制烹调制式〗</view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscTable_spoon' value="{{uscTable_spoon}}"/> 
+              <text>汤勺(Tbs)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='mcTable_spoon' value="{{mcTable_spoon}}"/> 
+              <text>汤勺</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscTea_spoon' value="{{uscTea_spoon}}"/> 
+              <text>调羹(tsp)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscCup' value="{{uscCup}}"/> 
+              <text>杯(fl oz)</text>
+            </view>
+            <view>〖美制液量〗</view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslBarrel' value="{{uslBarrel}}"/> 
+              <text>桶[42加仑]</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslGallon' value="{{uslGallon}}"/> 
+              <text>加仑(gal)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslQuart' value="{{uslQuart}}"/> 
+              <text>夸脱(qt)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslPint' value="{{uslPint}}"/> 
+              <text>品脱(pt)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslGill' value="{{uslGill}}"/> 
+              <text>及耳(gi)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslFluid_ounce' value="{{uslFluid_ounce}}"/> 
+              <text>液量盎司(fl oz)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslFluid_dram' value="{{uslFluid_dram}}"/> 
+              <text>液量打兰(fl dr)</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uslMinim' value="{{uslMinim}}"/> 
+              <text>量滴(min)</text>
+            </view>
+            <view>〖美英同制体积计量〗</view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscAcre_foot' value="{{uscAcre_foot}}"/> 
+              <text>亩英尺</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscCubic_yard' value="{{uscCubic_yard}}"/> 
+              <text>立方码</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscCubic_foot' value="{{uscCubic_foot}}"/> 
+              <text>立方英尺</text>
+            </view>
+            <view class="resIn">
+              <input  placeholder="0"  bindinput='uscCubic_inch' value="{{uscCubic_inch}}"/> 
+              <text>立方英寸</text>
+            </view>
           </view>
-        </view>
-      </picker>
-     </view>
-      <view  class="finalresult">
-      <view>〖公　制〗</view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCubic_meter' value="{{mCubic_meter}}"/> 
-          <text>立方米(m<text class="sup">3</text>)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mHectoliter' value="{{mHectoliter}}"/> 
-          <text>公石(hl)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mDekaliter' value="{{mDekaliter}}"/> 
-          <text>十升(dal)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mLiter' value="{{mLiter}}"/> 
-          <text>立方分米(mm<text class="sup">3</text>)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mDeciliter' value="{{mDeciliter}}"/> 
-          <text>分升(dl)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCentiliter' value="{{mCentiliter}}"/> 
-          <text>厘升(cl)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mMilliliter' value="{{mMilliliter}}"/> 
-          <text>立方厘米(cm<text class="sup">3</text>)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mCubic_millimeter' value="{{mCubic_millimeter}}"/> 
-          <text>立方毫米(mm<text class="sup">3</text>)</text>
-        </view>
-         <view>〖美制干量〗</view>
-          <view class="resIn">
-          <input  placeholder="0"  bindinput='usdBarrel' value="{{usdBarrel}}"/> 
-          <text>桶</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='usdBushel' value="{{usdBushel}}"/> 
-          <text>蒲式耳(bu)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='usdPeck' value="{{usdPeck}}"/> 
-          <text>配克(pk)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='usdQuart' value="{{usdQuart}}"/> 
-          <text>夸脱(qt)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='usdPint' value="{{usdPint}}"/> 
-          <text>品脱(pt)</text>
-        </view>
-         <view>〖英制液量和干量〗</view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='briBarrel' value="{{briBarrel}}"/> 
-          <text>桶</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='briBushel' value="{{briBushel}}"/> 
-          <text>蒲式耳</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='briGallon' value="{{briGallon}}"/> 
-          <text>加仑(bal)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='briPint' value="{{briPint}}"/> 
-          <text>品脱(pt)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='briFluid_ounce' value="{{briFluid_ounce}}"/> 
-          <text>液量盎司(fl oz)</text>
-        </view>
-         <view>〖公制烹调制式〗</view>
-           <view class="resIn">
-          <input  placeholder="0"  bindinput='mcTable_spoon' value="{{mcTable_spoon}}"/> 
-          <text>汤勺</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mcTea_spoon' value="{{mcTea_spoon}}"/> 
-          <text>调羹(Tea spoon)</text>
-        </view>
-        <view>〖美制烹调制式〗</view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uscTable_spoon' value="{{uscTable_spoon}}"/> 
-          <text>汤勺(Tbs)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mcTable_spoon' value="{{mcTable_spoon}}"/> 
-          <text>汤勺</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uscTea_spoon' value="{{uscTea_spoon}}"/> 
-          <text>调羹(tsp)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='uscCup' value="{{uscCup}}"/> 
-          <text>杯(fl oz)</text>
-        </view>
-        <view>〖美制液量〗</view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='uslBarrel' value="{{uslBarrel}}"/> 
-          <text>桶[42加仑]</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uslGallon' value="{{uslGallon}}"/> 
-          <text>加仑(gal)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uslQuart' value="{{uslQuart}}"/> 
-          <text>夸脱(qt)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='uslPint' value="{{uslPint}}"/> 
-          <text>品脱(pt)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uslGill' value="{{uslGill}}"/> 
-          <text>及耳(gi)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uslFluid_ounce' value="{{uslFluid_ounce}}"/> 
-          <text>液量盎司(fl oz)</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uslFluid_dram' value="{{uslFluid_dram}}"/> 
-          <text>液量打兰(fl dr)</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='uslMinim' value="{{uslMinim}}"/> 
-          <text>量滴(min)</text>
-        </view>
-        <view>〖美英同制体积计量〗</view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uscAcre_foot' value="{{uscAcre_foot}}"/> 
-          <text>亩英尺</text>
-        </view>
-         <view class="resIn">
-          <input  placeholder="0"  bindinput='uscCubic_yard' value="{{uscCubic_yard}}"/> 
-          <text>立方码</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uscCubic_foot' value="{{uscCubic_foot}}"/> 
-          <text>立方英尺</text>
-        </view>
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='uscCubic_inch' value="{{uscCubic_inch}}"/> 
-          <text>立方英寸</text>
-        </view>
-      </view>
-     
-      
-    </swiper-item>
-    <swiper-item ><view>3</view></swiper-item>
-    <swiper-item><view>4</view></swiper-item>
-    <swiper-item><view>5</view></swiper-item>
-    <swiper-item ><view>6</view></swiper-item>
-    <swiper-item><view>7</view></swiper-item>
-    <!-- 压力单位转换 -->
-    <swiper-item>
-      <view class="pickerContent">
-        <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
-         bindblur='pressureNumChange'/></view>
-      <picker bindchange="pressureChange" value="{{index}}" range="{{pressureZharray}}">
-        <view class="picker">
-          <view class="fb-type">
-            <view class="type-label">{{pressureZharray[index]}}</view>
-            <image class="type-icon" src="../../images/grayDown.png"></image>
+        </swiper-item>
+        <swiper-item >
+          <view>3</view>
+        </swiper-item>
+        <swiper-item>
+          <view>4</view>
+        </swiper-item>
+        <swiper-item>
+          <view>5</view>
+        </swiper-item>
+        <swiper-item >
+          <view>6</view>
+        </swiper-item>
+        <swiper-item>
+          <view>7</view>
+        </swiper-item>
+        <!-- 压力单位转换 -->
+        <swiper-item>
+          <view class="pickerContent">
+            <view class="numBox"><input bindinput="inputNum" placeholder="请输入数字" 
+            bindblur='pressureNumChange'/></view>
+            <picker bindchange="pressureChange" value="{{index}}" range="{{pressureZharray}}">
+              <view class="picker">
+                <view class="fb-type">
+                  <view class="type-label">{{pressureZharray[index]}}</view>
+                  <image class="type-icon" src="../../images/grayDown.png"></image>
+                </view>
+              </view>
+            </picker>
           </view>
-        </view>
-      </picker>
-      </view>
-      <view  class="finalresult">
-        <view class="resIn">
-          <input  placeholder="0"  bindinput='mBar' value="{{mBar}}"/> 
-          <text>巴(bar)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mKilopascal' value="{{mKilopascal}}"/> 
-          <text>千帕(kPa)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mHectopascal' value="{{mHectopascal}}"/> 
-          <text>百帕(hPa)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mMillibar' value="{{mMillibar}}"/> 
-          <text>毫巴(mbar)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mPascal' value="{{mPascal}}"/> 
-          <text>帕斯卡(Pa = N/m2)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mAtm' value="{{mAtm}}"/> 
-          <text>标准大气压(atm)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mMillimeter_Hg' value="{{mMillimeter_Hg}}"/> 
-          <text>毫米汞柱(托)(mm Hg = Torr)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='engPound_sq_foot' value="{{engPound_sq_foot}}"/> 
-          <text>磅力/英尺2(lbf/ft2)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='engPound_sq_inch' value="{{engPound_sq_inch}}"/> 
-          <text>磅力/英寸2(lbf/in2 = PSI)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='engInch_Hg' value="{{engInch_Hg}}"/> 
-          <text>英吋汞柱(in?Hg)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='xpressKg_sq_cm' value="{{xpressKg_sq_cm}}"/> 
-          <text>公斤力/厘米2(kgf/cm2)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='xpressKg_sq_m' value="{{xpressKg_sq_m}}"/> 
-          <text>公斤力/米2(kgf/m2)</text>
-      </view>
-      <view class="resIn">
-          <input  placeholder="0"  bindinput='mmmH2O' value="{{mmmH2O}}"/> 
-          <text>毫米水柱(mmH2O)</text>
-      </view>
-    </view></swiper-item>
-    <swiper-item ><view>9</view></swiper-item>
-    <swiper-item><view>10</view></swiper-item>
-    <swiper-item><view>11</view></swiper-item>
-    <swiper-item ><view>12</view></swiper-item>
-    <swiper-item><view>13</view></swiper-item>
-    <swiper-item><view>14</view></swiper-item>
-    <swiper-item ><view>15</view></swiper-item>
-</swiper>
-
-</view>
-      
-</view>
-</view>
+          <view  class="finalresult">
+              <view class="resIn">
+                <input  placeholder="0"  bindinput='mBar' value="{{mBar}}"/> 
+                <text>巴(bar)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mKilopascal' value="{{mKilopascal}}"/> 
+                <text>千帕(kPa)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mHectopascal' value="{{mHectopascal}}"/> 
+                <text>百帕(hPa)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mMillibar' value="{{mMillibar}}"/> 
+                <text>毫巴(mbar)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mPascal' value="{{mPascal}}"/> 
+                <text>帕斯卡(Pa = N/m2)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mAtm' value="{{mAtm}}"/> 
+                <text>标准大气压(atm)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mMillimeter_Hg' value="{{mMillimeter_Hg}}"/> 
+                <text>毫米汞柱(托)(mm Hg = Torr)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='engPound_sq_foot' value="{{engPound_sq_foot}}"/> 
+                <text>磅力/英尺2(lbf/ft2)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='engPound_sq_inch' value="{{engPound_sq_inch}}"/> 
+                <text>磅力/英寸2(lbf/in2 = PSI)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='engInch_Hg' value="{{engInch_Hg}}"/> 
+                <text>英吋汞柱(in?Hg)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='xpressKg_sq_cm' value="{{xpressKg_sq_cm}}"/> 
+                <text>公斤力/厘米2(kgf/cm2)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='xpressKg_sq_m' value="{{xpressKg_sq_m}}"/> 
+                <text>公斤力/米2(kgf/m2)</text>
+            </view>
+            <view class="resIn">
+                <input  placeholder="0"  bindinput='mmmH2O' value="{{mmmH2O}}"/> 
+                <text>毫米水柱(mmH2O)</text>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item >
+          <view>9</view>
+        </swiper-item>
+        <swiper-item>
+          <view>10</view>
+        </swiper-item>
+        <swiper-item>
+          <view>11</view>
+        </swiper-item>
+        <swiper-item >
+          <view>12</view>
+        </swiper-item>
+        <swiper-item>
+          <view>13</view>
+        </swiper-item>
+        <swiper-item>
+          <view>14</view>
+        </swiper-item>
+        <swiper-item >
+          <view>15</view>
+        </swiper-item>
+      </swiper>
+    </view>      
+  <view class="bottom">CFD小透明</view>
+</view> 

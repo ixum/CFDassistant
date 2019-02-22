@@ -1,10 +1,23 @@
 
 page{
-  height:100%;
+	width: 100%;
+	height: 98%;
   box-sizing: border-box;
 }
+.container{
+  height:100%;
+  padding:0 20rpx;
+  width:100%;
+  box-sizing: border-box;
+}
+.table{
+  width:100%;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
+  overflow-y: scroll;
+}
 .contentSwiper{
-  min-height:940rpx;
+  min-height:884rpx;
 }
 .swiper-box{
   height:200rpx;
@@ -21,7 +34,7 @@ page{
   border:2rpx solid rgba(0,0,0,0.5);
   border-radius: 40rpx;
   margin-top:10rpx;
-  margin-right:20rpx;
+  /* margin-right:20rpx; */
   text-align: center;
   height:60rpx;
   line-height:60rpx; 
@@ -62,15 +75,13 @@ page{
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 30rpx;
-  padding-right: 30rpx;
 }
 .fb-type .type-label{
   height: 40rpx;
   flex: 1;
   color: #333;
   font-size: 32rpx;
-  margin-left:150rpx;
+  margin-left:180rpx;
   padding-top:10rpx;
 }
 .fb-type .type-icon{
@@ -96,8 +107,12 @@ page{
 .resIn{
 display: flex;  
 justify-content: space-between;
-margin:40rpx 20rpx;
+margin:40rpx 10rpx;
 border-bottom:1rpx solid gray;
+}
+.resIn text{
+  width:57%;
+  text-align: right;
 }
 ::-webkit-scrollbar {
   width: 20rpx;
@@ -107,4 +122,11 @@ border-bottom:1rpx solid gray;
 .sup{
      font-size: 10px;
      vertical-align:text-top;
+}
+.bottom{
+  border-top: 1rpx dotted gray;
+  width: 100%;
+  text-align: center;
+  line-height: 100%;
+  padding-top: 20rpx;
 }
